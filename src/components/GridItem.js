@@ -1,20 +1,27 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
-const GridItem = ({item}) => {
+const GridItem = ({item, navigation}) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{item.item}</Text>
-    </View>
+    <TouchableOpacity
+      onPress={() => {
+        console.log(item.item, 'was pressed');
+        navigation.navigate({routeName: 'CategoryMeals'});
+      }}>
+      <View style={{...styles.container, backgroundColor: item.color}}>
+        <Text style={styles.text}>{item.title}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#777',
-    justifyContent: 'center',
     alignItems: 'center',
+    margin: 16,
+    height: 152,
+    width: '100%',
   },
   text: {
     fontFamily: 'OpenSans-Bold',
