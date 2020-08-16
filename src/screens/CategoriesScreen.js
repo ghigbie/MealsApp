@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, View, Text} from 'react-native';
+import {FlatList, StyleSheet} from 'react-native';
 
 import CATEGORIES from './../../data/dummy-data';
 
@@ -12,12 +12,21 @@ const CategoriesScreen = ({navigation}) => {
 
   return (
     <FlatList
-      numColumns={2}
+      style={styles.container}
+      numColumns={1}
       data={CATEGORIES}
       keyExtractor={(item, index) => item.id}
       renderItem={renderGridItem}
     />
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+    backgroundColor: 'grey',
+  },
+});
 
 export default CategoriesScreen;
