@@ -8,7 +8,7 @@ const CategoriesScreen = ({navigation}) => {
       <Button
         title="Category Meals Screen"
         onPress={() => {
-          navigation.navigate('CategoryMeals');
+          navigation.navigate({routeName: 'CategoryMeals'});
         }}
       />
     </View>
