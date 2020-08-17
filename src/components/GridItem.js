@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 
 const GridItem = ({item, navigation}) => {
   return (
@@ -21,6 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     margin: 16,
     height: 152,
+    minWidth: Dimensions.get('screen').width / 2 - 32,
   },
   text: {
     fontFamily: 'OpenSans-Bold',

@@ -1,31 +1,33 @@
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet} from 'react-native';
 
 import CATEGORIES from './../../data/dummy-data';
 
 import GridItem from './../components/GridItem';
 
 const CategoriesScreen = ({navigation}) => {
-  const renderGridItem = (itemData) => {
-    return <GridItem item={itemData.item} navigation={navigation} />;
-  };
-
   return (
     <FlatList
-      style={styles.container}
-      numColumns={1}
+      style={styles.list}
       data={CATEGORIES}
       keyExtractor={(item, index) => item.id}
-      renderItem={renderGridItem}
+      contentContainerStyle={styles.contentContainer}
+      renderItem={(item) => (
+        <GridItem item={item.item} navigation={navigation} />
+      )}
+      ItemSeparatorComponent={() => (
+        <View style={{width: 16, backgroundColor: 'pink'}} />
+      )}
+      columnWrapperStyle={{width: '100%'}}
+      numColumns={2}
     />
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: '100%',
+  contentContainer: {
     backgroundColor: 'grey',
+    justifyContent: 'space-between',
   },
 });
 
