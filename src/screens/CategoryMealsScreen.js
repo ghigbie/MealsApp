@@ -22,13 +22,6 @@ CategoryMealsScreen.navigationOptions = (navigationData) => {
 
   return {
     headerTitle: selectedCategory.title,
-    headerStyle: {
-      ...Platform.select({
-        android: {backgroundColor: Colors.primaryColor},
-        ios: {backgroundColor: '#fff'},
-      }),
-    },
-    headerTintColor: Platform.OS === 'android' ? '#fff' : '#000',
   };
 };
 

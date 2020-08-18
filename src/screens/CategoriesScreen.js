@@ -23,13 +23,6 @@ const CategoriesScreen = ({navigation}) => {
 
 CategoriesScreen.navigationOptions = {
   headerTitle: 'Meal Categories',
-  headerStyle: {
-    ...Platform.select({
-      android: {backgroundColor: Colors.primaryColor},
-      ios: {backgroundColor: '#fff'},
-    }),
-  },
-  headerTintColor: Platform.OS === 'android' ? '#fff' : '#000',
 };
 
 const styles = StyleSheet.create({
