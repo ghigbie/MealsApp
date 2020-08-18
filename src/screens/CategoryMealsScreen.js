@@ -15,15 +15,21 @@ const CategoryMealsScreen = ({navigation}) => {
   );
 };
 
-CategoryMealsScreen.navigationOptions = {
-  headerTitle: 'Moo',
-  headerStyle: {
-    ...Platform.select({
-      android: {backgroundColor: Colors.primaryColor},
-      ios: {backgroundColor: '#fff'},
-    }),
-  },
-  headerTintColor: Platform.OS === 'android' ? '#fff' : '#000',
+CategoryMealsScreen.navigationOptions = (navigationData) => {
+  const catId = navigationData.navigation.getParam('categoryId');
+
+  const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
+
+  return {
+    headerTitle: selectedCategory.title,
+    headerStyle: {
+      ...Platform.select({
+        android: {backgroundColor: Colors.primaryColor},
+        ios: {backgroundColor: '#fff'},
+      }),
+    },
+    headerTintColor: Platform.OS === 'android' ? '#fff' : '#000',
+  };
 };
 
 const styles = StyleSheet.create({
