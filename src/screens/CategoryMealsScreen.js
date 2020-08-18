@@ -1,10 +1,14 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const CategoryMealsScreen = () => {
+import {Categories, CATEGORIES} from './../../data/dummy-data';
+
+const CategoryMealsScreen = ({navigation}) => {
+  const catId = navigation.getParam('categoryId');
+  const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
   return (
     <View style={styles.container}>
-      <Text>Category Meal Screen</Text>
+      <Text>{selectedCategory.title}</Text>
     </View>
   );
 };

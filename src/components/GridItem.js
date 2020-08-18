@@ -11,7 +11,12 @@ const GridItem = ({item, navigation}) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate({routeName: 'CategoryMeals'});
+        navigation.navigate({
+          routeName: 'CategoryMeals',
+          params: {
+            categoryId: item.id,
+          },
+        });
       }}>
       <View style={{...styles.container, backgroundColor: item.color}}>
         <Text style={styles.text}>{item.title}</Text>
