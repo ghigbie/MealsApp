@@ -7,12 +7,12 @@ import {
   Dimensions,
 } from 'react-native';
 
-const CategoryGridItem = ({item, title, color, onSelect}) => {
+const CategoryGridItem = ({title, color, onSelect}) => {
   return (
-    <TouchableOpacity onPress={onSelect}>
-      <View style={{...styles.container, backgroundColor: color}}>
-        <Text style={styles.text}>{title}</Text>
-      </View>
+    <TouchableOpacity
+      onPress={onSelect}
+      style={{...styles.container, backgroundColor: color}}>
+      <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
 };
