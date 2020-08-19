@@ -7,7 +7,7 @@ import {
   Dimensions,
 } from 'react-native';
 
-const CategoryGridItem = ({title, color, onSelect}) => {
+const CategoryGridItem = ({item, title, color, onSelect}) => {
   return (
     <TouchableOpacity onPress={onSelect}>
       <View style={{...styles.container, backgroundColor: color}}>
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     margin: 16,
     height: 152,
     minWidth: Dimensions.get('screen').width / 2 - 32,
-    borderRadius: (Dimensions.get('screen').width / 2 - 32) / 2,
+    borderRadius: 18,
   },
   text: {
     fontFamily: 'OpenSans-Bold',

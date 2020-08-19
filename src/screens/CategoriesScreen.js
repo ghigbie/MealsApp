@@ -4,7 +4,7 @@ import {FlatList, StyleSheet, Platform} from 'react-native';
 import CATEGORIES from './../../data/dummy-data';
 import Colors from './../../constants/Colors';
 
-import GridItem from './../components/GridItem';
+import CategoryGridItem from '../components/CategoryGridItem';
 
 const CategoriesScreen = ({navigation}) => {
   return (
@@ -13,10 +13,11 @@ const CategoriesScreen = ({navigation}) => {
       data={CATEGORIES}
       keyExtractor={(item, index) => item.id}
       contentContainerStyle={styles.contentContainer}
-      renderItem={(item) => (
-        <GridItem
-          item={item.item}
+      renderItem={({item}) => (
+        <CategoryGridItem
+          title={item.title}
           color={item.color}
+          id={item.id}
           onSelect={() => {
             navigation.navigate({
               routeName: 'CategoryMeals',
