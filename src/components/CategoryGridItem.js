@@ -14,8 +14,6 @@ const CategoryGridItem = ({title, color, onSelect}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     margin: 16,
     height: 152,
     minWidth: Dimensions.get('screen').width / 2 - 32,
@@ -25,6 +23,10 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 6},
     shadowRadius: 18,
     elevation: 6,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
   },
   text: {
     fontFamily: 'OpenSans-Bold',
