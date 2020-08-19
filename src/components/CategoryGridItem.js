@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import {Text, StyleSheet, TouchableOpacity, Dimensions} from 'react-native';
 
 const CategoryGridItem = ({title, color, onSelect}) => {
   return (
@@ -26,6 +20,11 @@ const styles = StyleSheet.create({
     height: 152,
     minWidth: Dimensions.get('screen').width / 2 - 32,
     borderRadius: 18,
+    shadowColor: 'black',
+    shadowOpacity: 0.24,
+    shadowOffset: {width: 0, height: 6},
+    shadowRadius: 18,
+    elevation: 6,
   },
   text: {
     fontFamily: 'OpenSans-Bold',
