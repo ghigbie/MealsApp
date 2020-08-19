@@ -7,19 +7,11 @@ import {
   Dimensions,
 } from 'react-native';
 
-const GridItem = ({item, navigation}) => {
+const CategoryGridItem = ({title, color, onSelect}) => {
   return (
-    <TouchableOpacity
-      onPress={() => {
-        navigation.navigate({
-          routeName: 'CategoryMeals',
-          params: {
-            categoryId: item.id,
-          },
-        });
-      }}>
-      <View style={{...styles.container, backgroundColor: item.color}}>
-        <Text style={styles.text}>{item.title}</Text>
+    <TouchableOpacity onPress={onSelect}>
+      <View style={{...styles.container, backgroundColor: color}}>
+        <Text style={styles.text}>{title}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -33,10 +25,11 @@ const styles = StyleSheet.create({
     margin: 16,
     height: 152,
     minWidth: Dimensions.get('screen').width / 2 - 32,
+    borderRadius: (Dimensions.get('screen').width / 2 - 32) / 2,
   },
   text: {
     fontFamily: 'OpenSans-Bold',
   },
 });
 
-export default GridItem;
+export default CategoryGridItem;

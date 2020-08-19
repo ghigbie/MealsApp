@@ -14,7 +14,18 @@ const CategoriesScreen = ({navigation}) => {
       keyExtractor={(item, index) => item.id}
       contentContainerStyle={styles.contentContainer}
       renderItem={(item) => (
-        <GridItem item={item.item} navigation={navigation} />
+        <GridItem
+          item={item.item}
+          color={item.color}
+          onSelect={() => {
+            navigation.navigate({
+              routeName: 'CategoryMeals',
+              params: {
+                categoryId: item.id,
+              },
+            });
+          }}
+        />
       )}
       numColumns={2}
     />
