@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet, Platform} from 'react-native';
+import {FlatList, StyleSheet} from 'react-native';
 
 import {CATEGORIES} from './../../data/dummy-data';
 import Colors from './../../constants/Colors';
@@ -40,7 +40,7 @@ CategoriesScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
   contentContainer: {
-    backgroundColor: 'grey',
+    backgroundColor: Colors.lightGrey,
     justifyContent: 'space-between',
   },
 });

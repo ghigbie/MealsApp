@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, FlatList} from 'react-native';
+import Colors from './../../constants/Colors';
 
 import {CATEGORIES, MEALS} from './../../data/dummy-data';
 import MealCard from './../components/MealCard';
@@ -40,7 +41,7 @@ CategoryMealsScreen.navigationOptions = (navigationData) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#00f',
+    backgroundColor: Colors.lightGrey,
     alignItems: 'center',
   },
 });
