@@ -4,22 +4,25 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  Dimensions,
   Platform,
   TouchableNativeFeedback,
 } from 'react-native';
 
-const CategoryGridItem = ({title, color, onSelect}) => {
+const MealCard = ({meal}) => {
   let TouchableComponent = TouchableOpacity;
 
   if (Platform.OS === 'android' && Platform.Version >= 21) {
     TouchableComponent = TouchableNativeFeedback;
   }
   return (
-    <View style={{...styles.container, backgroundColor: color}}>
-      <TouchableComponent onPress={onSelect} style={styles.touchable}>
+    <View style={{...styles.container}}>
+      <TouchableComponent
+        onPress={() => {
+          console.log(meal.title);
+        }}
+        style={styles.touchable}>
         <Text style={styles.title} numberOfLines={2}>
-          {title}
+          {meal.title}
         </Text>
       </TouchableComponent>
     </View>
@@ -30,8 +33,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 16,
-    height: Dimensions.get('screen').width / 2 - 32,
-    minWidth: Dimensions.get('screen').width / 2 - 32,
     borderRadius: 18,
     shadowColor: 'black',
     shadowOpacity: 0.24,
@@ -53,4 +54,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CategoryGridItem;
+export default MealCard;

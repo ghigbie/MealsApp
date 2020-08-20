@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, StyleSheet, Platform} from 'react-native';
 
-import CATEGORIES from './../../data/dummy-data';
+import {CATEGORIES} from './../../data/dummy-data';
 import Colors from './../../constants/Colors';
 
 import CategoryGridItem from '../components/CategoryGridItem';

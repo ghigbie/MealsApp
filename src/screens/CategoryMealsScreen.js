@@ -1,12 +1,15 @@
 import React from 'react';
 import {View, Text, StyleSheet, Platform} from 'react-native';
 
-import CATEGORIES from './../../data/dummy-data';
+import {CATEGORIES, MEALS} from './../../data/dummy-data';
 import Colors from '../../constants/Colors';
 
 const CategoryMealsScreen = ({navigation}) => {
   const catId = navigation.getParam('categoryId');
   const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
+  const displayedMeals = MEALS.filter((meal) => {
+    meal.categoryIds.indexOf(catId) >= 0;
+  });
 
   return (
     <View style={styles.container}>
@@ -17,7 +20,6 @@ const CategoryMealsScreen = ({navigation}) => {
 
 CategoryMealsScreen.navigationOptions = (navigationData) => {
   const catId = navigationData.navigation.getParam('categoryId');
-  console.log('CAT ID: ', catId);
   const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
 
   return {
