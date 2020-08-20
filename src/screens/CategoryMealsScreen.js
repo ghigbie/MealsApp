@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 
 import {CATEGORIES, MEALS} from './../../data/dummy-data';
 import MealCard from './../components/MealCard';
@@ -13,7 +13,6 @@ const CategoryMealsScreen = ({navigation}) => {
   );
   return (
     <View style={{...styles.container, backgroundColor: '#ccc'}}>
-      <Text>{selectedCategory.title}</Text>
       <FlatList
         data={displayedMeals}
         keyExtractor={(item, index) => item.id}

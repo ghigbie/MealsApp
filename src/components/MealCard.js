@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View,
   Text,
+  Image,
   StyleSheet,
   TouchableOpacity,
   Platform,
@@ -16,7 +17,8 @@ const MealCard = ({meal, color}) => {
     TouchableComponent = TouchableNativeFeedback;
   }
 
-  console.log('Meal Item: ', meal.title);
+  console.log('Meal Item: ', meal);
+
   return (
     <View style={{...styles.container, backgroundColor: color}}>
       <TouchableComponent
@@ -27,6 +29,18 @@ const MealCard = ({meal, color}) => {
         <Text style={styles.title} numberOfLines={2}>
           {meal.title}
         </Text>
+        <Text>{meal.affordability}</Text>
+        <View style={styles.imageContainer}>
+          <Image
+            source={{
+              uri: meal.imageUrl,
+            }}
+            resizeMode="contain"
+            style={styles.image}
+            borderRadius={18}
+          />
+        </View>
+        <Text>{meal.ingredients}</Text>
       </TouchableComponent>
     </View>
   );
@@ -54,6 +68,14 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'OpenSans-Bold',
     fontSize: 24,
+  },
+  imageContainer: {
+    overflow: 'hidden',
+  },
+  image: {
+    height: 200,
+    width: 200,
+    overflow: 'hidden',
   },
 });
 
