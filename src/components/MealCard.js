@@ -35,7 +35,6 @@ const MealCard = ({meal, color}) => {
             source={{
               uri: meal.imageUrl,
             }}
-            resizeMode="contain"
             style={styles.image}
             borderRadius={18}
           />
@@ -73,9 +72,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   image: {
-    height: 200,
-    width: 200,
-    overflow: 'hidden',
+    height: 260,
   },
 });
 
