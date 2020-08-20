@@ -30,15 +30,13 @@ const MealCard = ({meal, color}) => {
           {meal.title}
         </Text>
         <Text>{meal.affordability}</Text>
-        <View style={styles.imageContainer}>
-          <Image
-            source={{
-              uri: meal.imageUrl,
-            }}
-            style={styles.image}
-            borderRadius={18}
-          />
-        </View>
+        <Image
+          source={{
+            uri: meal.imageUrl,
+          }}
+          style={styles.image}
+          borderRadius={18}
+        />
         <Text>{meal.ingredients}</Text>
       </TouchableComponent>
     </View>
@@ -67,9 +65,6 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'OpenSans-Bold',
     fontSize: 24,
-  },
-  imageContainer: {
-    overflow: 'hidden',
   },
   image: {
     height: 260,
