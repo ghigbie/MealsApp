@@ -23,6 +23,7 @@ const CategoriesScreen = ({navigation}) => {
               routeName: 'CategoryMeals',
               params: {
                 categoryId: item.id,
+                color: item.color,
               },
             });
           }}
