@@ -9,7 +9,7 @@ import CategoryGridItem from '../components/CategoryGridItem';
 const CategoriesScreen = ({navigation}) => {
   return (
     <FlatList
-      style={styles.list}
+      style={{width: '100%'}}
       data={CATEGORIES}
       keyExtractor={(item, index) => item.id}
       contentContainerStyle={styles.contentContainer}

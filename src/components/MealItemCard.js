@@ -10,7 +10,7 @@ import {
   Dimensions,
 } from 'react-native';
 
-const MealCard = ({meal, color}) => {
+const MealItemCard = ({meal, color, onSelectMeal}) => {
   let TouchableComponent = TouchableOpacity;
 
   if (Platform.OS === 'android' && Platform.Version >= 21) {
@@ -24,6 +24,7 @@ const MealCard = ({meal, color}) => {
       <TouchableComponent
         onPress={() => {
           console.log(meal.title);
+          onSelectMeal();
         }}
         style={styles.touchable}>
         <Text style={styles.title} numberOfLines={2}>
@@ -71,4 +72,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MealCard;
+export default MealItemCard;

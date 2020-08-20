@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 16,
     height: Dimensions.get('screen').width / 2 - 32,
-    minWidth: Dimensions.get('screen').width / 2 - 32,
     borderRadius: 18,
     shadowColor: 'black',
     shadowOpacity: 0.24,
