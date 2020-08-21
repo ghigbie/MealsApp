@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
   },
   image: {
     height: '96%',
-    margin: 6,
-    marginTop: 12,
+    margin: 4,
+    marginTop: 8,
     justifyContent: 'flex-end',
   },
   mealRow: {
@@ -93,12 +93,12 @@ const styles = StyleSheet.create({
   },
   mealHeader: {
     height: '90%',
+    overflow: 'hidden',
   },
   mealDetail: {
     flex: 1,
     paddingHorizontal: 10,
     justifyContent: 'space-between',
-    //alignItems: 'center',
   },
   footerText: {
     fontFamily: 'OpenSans-Bold',
