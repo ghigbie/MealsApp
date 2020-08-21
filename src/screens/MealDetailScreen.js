@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
+import Colors from './../../constants/Colors';
+
 const MealDetailScreen = () => {
   return (
     <View style={styles.container}>
@@ -12,7 +14,7 @@ const MealDetailScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.lightGrey,
     justifyContent: 'center',
     alignItems: 'center',
   },

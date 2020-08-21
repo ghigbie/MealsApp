@@ -21,12 +21,7 @@ const MealItemCard = ({meal, color, onSelectMeal}) => {
 
   return (
     <View style={{...styles.container, backgroundColor: color}}>
-      <TouchableComponent
-        onPress={() => {
-          console.log(meal.title);
-          onSelectMeal();
-        }}
-        style={styles.touchable}>
+      <TouchableComponent onPress={onSelectMeal} style={styles.touchable}>
         <View style={{...styles.mealHeader}}>
           <ImageBackground
             source={{

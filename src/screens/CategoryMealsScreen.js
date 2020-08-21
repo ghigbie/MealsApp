@@ -29,8 +29,9 @@ const CategoryMealsScreen = ({navigation}) => {
             color={colorStyle}
             navigation={navigation}
             onSelectMeal={() => {
+              console.log('On select meal called');
               navigation.navigate({
-                route: 'MealDetail',
+                routeName: 'MealDetail',
                 params: {
                   mealId: item.id,
                 },
