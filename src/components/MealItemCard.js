@@ -2,7 +2,7 @@ import React from 'react';
 import {
   View,
   Text,
-  Image,
+  ImageBackground,
   StyleSheet,
   TouchableOpacity,
   Platform,
@@ -27,18 +27,27 @@ const MealItemCard = ({meal, color, onSelectMeal}) => {
           onSelectMeal();
         }}
         style={styles.touchable}>
-        <Text style={styles.title} numberOfLines={2}>
-          {meal.title}
-        </Text>
-        <Text>{meal.affordability}</Text>
-        <Image
-          source={{
-            uri: meal.imageUrl,
-          }}
-          style={styles.image}
-          borderRadius={18}
-        />
-        <Text>{meal.ingredients}</Text>
+        <View style={{...styles.mealHeader}}>
+          <ImageBackground
+            source={{
+              uri: meal.imageUrl,
+            }}
+            style={styles.image}
+            borderRadius={18}>
+            <View style={styles.titleWrapper}>
+              <Text style={styles.title} numberOfLines={1}>
+                {meal.title}
+              </Text>
+            </View>
+          </ImageBackground>
+        </View>
+        <View style={{...styles.mealRow, ...styles.mealDetail}}>
+          <Text style={styles.footerText}>{meal.duration} mins</Text>
+          <Text style={styles.footerText}>{meal.complexity.toUpperCase()}</Text>
+          <Text style={styles.footerText}>
+            {meal.affordability.toUpperCase()}
+          </Text>
+        </View>
       </TouchableComponent>
     </View>
   );
@@ -54,21 +63,45 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 6},
     shadowRadius: 18,
     elevation: 6,
-    height: Dimensions.get('screen').height / 2,
+    height: Dimensions.get('screen').height / 3,
     width: Dimensions.get('screen').width - 36,
   },
   touchable: {
     flex: 1,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
+    paddingHorizontal: 4,
     justifyContent: 'center',
+  },
+  titleWrapper: {
+    borderRadius: 18,
+    marginBottom: 10,
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
   },
   title: {
     fontFamily: 'OpenSans-Bold',
     fontSize: 24,
+    marginHorizontal: 4,
+    color: '#fff',
   },
   image: {
-    height: 260,
+    height: '96%',
+    margin: 6,
+    marginTop: 12,
+    justifyContent: 'flex-end',
+  },
+  mealRow: {
+    flexDirection: 'row',
+  },
+  mealHeader: {
+    height: '90%',
+  },
+  mealDetail: {
+    flex: 1,
+    paddingHorizontal: 10,
+    justifyContent: 'space-between',
+    //alignItems: 'center',
+  },
+  footerText: {
+    fontFamily: 'OpenSans-Bold',
   },
 });
 
