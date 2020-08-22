@@ -32,11 +32,13 @@ const MealsNavigator = createStackNavigator(
 
 const MealsFabTabNavigator = createBottomTabNavigator(
   {
-    Meals: MealsNavigator,
-    Favorites: FavoritesScreen,
+    Meals: {screen: MealsNavigator, navigationOptions: {}},
+    Favorites: {screen: FavoritesScreen, navigationOptions: {}},
   },
   {
+    initialRouteName: 'Meals',
     tabBarOptions: {activeTintColor: Colors.primary},
+    allowFontScaling: true,
   },
 );
 
