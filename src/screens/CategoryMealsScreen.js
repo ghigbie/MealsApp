@@ -13,10 +13,6 @@ const CategoryMealsScreen = ({navigation}) => {
     (meal) => meal.categoryIds.indexOf(catId) >= 0,
   );
 
-  const onSelectMeal = () => {
-    console.log('On select meal called');
-  };
-
   return (
     <View style={{...styles.container, backgroundColor: '#ccc'}}>
       <FlatList
@@ -29,11 +25,11 @@ const CategoryMealsScreen = ({navigation}) => {
             color={colorStyle}
             navigation={navigation}
             onSelectMeal={() => {
-              console.log('On select meal called');
+              console.log('On select meal called: ', item.item.id);
               navigation.navigate({
                 routeName: 'MealDetail',
                 params: {
-                  mealId: item.id,
+                  mealId: item.item.id,
                 },
               });
             }}

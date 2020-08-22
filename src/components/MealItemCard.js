@@ -17,8 +17,6 @@ const MealItemCard = ({meal, color, onSelectMeal}) => {
     TouchableComponent = TouchableNativeFeedback;
   }
 
-  console.log('Meal Item: ', meal);
-
   return (
     <View style={{...styles.container, backgroundColor: color}}>
       <TouchableComponent onPress={onSelectMeal} style={styles.touchable}>
