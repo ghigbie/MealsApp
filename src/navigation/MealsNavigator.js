@@ -7,6 +7,7 @@ import Colors from './../../constants/Colors';
 import CategoriesScreen from '../screens/CategoriesScreen';
 import CategoryMealsScreen from '../screens/CategoryMealsScreen';
 import MealDetailScreen from '../screens/MealDetailScreen';
+import FavoritesScreen from '../screens/FavoritesScreen';
 
 const MealsNavigator = createStackNavigator(
   {
@@ -29,4 +30,14 @@ const MealsNavigator = createStackNavigator(
   },
 );
 
-export default createAppContainer(MealsNavigator);
+const MealsFabTabNavigator = createBottomTabNavigator(
+  {
+    Meals: MealsNavigator,
+    Favorites: FavoritesScreen,
+  },
+  {
+    tabBarOptions: {activeTintColor: Colors.primary},
+  },
+);
+
+export default createAppContainer(MealsFabTabNavigator);
