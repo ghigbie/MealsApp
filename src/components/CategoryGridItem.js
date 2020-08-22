@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 6},
     shadowRadius: 18,
     elevation: 6,
+    overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
   },
   touchable: {
     flex: 1,
