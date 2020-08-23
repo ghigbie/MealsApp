@@ -1,13 +1,17 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Platform} from 'react-native';
+import {Ionicons} from 'react-native-vector-icons';
 import {HeaderButton} from 'react-navigation-header-buttons';
 import Colors from '../../constants/Colors';
 
 const CustomHeaderButton = (props) => {
   return (
-    <HeaderButton {...props}>
-      <Text>Do Stuff</Text>
-    </HeaderButton>
+    <HeaderButton
+      {...props}
+      IconComponent={Ionicons}
+      iconSize={23}
+      color={Platform.OS === 'android' ? '#fff' : Colors.primary}
+    />
   );
 };
 
