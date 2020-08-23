@@ -2,7 +2,7 @@ import {Platform} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-import {createMaterialBottomTabNavigator} from 'react-navigation-bottom-tab-navigator';
+// import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 import Colors from './../../constants/Colors';
 
 import CategoriesScreen from '../screens/CategoriesScreen';
@@ -37,15 +37,16 @@ const tabNavigationConfig = {
 };
 
 const MealsFabTabNavigator =
-  Platform.os === 'android'
-    ? createMaterialBottomTabNavigator(tabNavigationConfig, {
-        activeTintColor: Colors.primary,
-        shifting: true,
-      })
-    : createBottomTabNavigator(tabNavigationConfig, {
-        initialRouteName: 'Meals',
-        tabBarOptions: {activeTintColor: Colors.primary},
-        allowFontScaling: true,
-      });
+  // Platform.os === 'android'
+  //   ? createMaterialBottomTabNavigator(tabNavigationConfig, {
+  //       activeTintColor: Colors.primary,
+  //       shifting: true,
+  //     })
+  //   :
+  createBottomTabNavigator(tabNavigationConfig, {
+    initialRouteName: 'Meals',
+    tabBarOptions: {activeTintColor: Colors.primary},
+    allowFontScaling: true,
+  });
 
 export default createAppContainer(MealsFabTabNavigator);
