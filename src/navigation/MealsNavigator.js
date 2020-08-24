@@ -45,7 +45,7 @@ const FavoritesNavigator = createStackNavigator(
 
 const tabNavigationConfig = {
   Meals: {screen: MealsNavigator, navigationOptions: {}},
-  Favorites: {screen: FavoritesScreen, navigationOptions: {}},
+  Favorites: {screen: FavoritesNavigator, navigationOptions: {}},
 };
 
 const MealsFabTabNavigator =
