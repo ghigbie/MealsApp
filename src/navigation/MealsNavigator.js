@@ -3,8 +3,8 @@ import {Platform} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
-import {Ionicons} from 'react-native-vector-icons';
+import {createMaterialBottomrTabNavigator} from 'react-navigation-material-bottom-tabs';
+//import Icon from 'rearct-native-vector-icons/Ionicons';
 import Colors from './../../constants/Colors';
 
 import CategoriesScreen from '../screens/CategoriesScreen';
@@ -37,15 +37,15 @@ const tabNavigationConfig = {
   Meals: {
     screen: MealsNavigator,
     navigationOptions: {
-      tabBarIcon: (tabInfo) => {
-        return (
-          <Ionicons
-            name="ios-restaurant"
-            size={25}
-            color={tabInfo.activeTintColor}
-          />
-        );
-      },
+      // tabBarIcon: (tabInfo) => {
+      //   return (
+      //     <Icon
+      //       name="ios-restaurant"
+      //       size={25}
+      //       color={tabInfo.activeTintColor}
+      //     />
+      //   );
+      // },
     },
   },
   Favorites: {screen: FavoritesScreen, navigationOptions: {}},
